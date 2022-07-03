@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--使用了循环，比直接操作DOM简单的多，但也是在使用操作DOM的方式-->
+<ul id="list"></ul>
+</body>
+<script>
+  let arr = [
+    { "name": "小明", "age": 12, "sex": "男" },
+    { "name": "小红", "age": 11, "sex": "女" },
+    { "name": "小强", "age": 13, "sex": "男" }
+  ];
+
+  let list = document.getElementById('list');
+  //遍历
+  for  (let i = 0; i < arr.length; i++){
+    list.innerHTML+=[
+      '<li>',
+      '    <div class="hd">' + arr[i].name + '的信息</div>',
+      '    <div class="bd">',
+      '        <p>姓名：' + arr[i].name + '</p>',
+      '        <p>年龄：' + arr[i].age  + '</p>',
+      '        <p>性别：' + arr[i].sex + '</p>',
+      '    </div>',
+      '</li>'
+    ].join("")
+  //  tip:由于不能换行，只能但是使用只能使用这样的方式.join达到换行的效果
+  //  使用遍历的方式进行文字的输入，不得不说能想到这个方式的也是人才
+  }
+</script>
+</html>

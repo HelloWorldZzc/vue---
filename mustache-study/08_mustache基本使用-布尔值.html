@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../jslib/mustache.js"></script>
+</head>
+<body>
+<div id="container"></div>
+</body>
+<script>
+<!-- 有点类似于v-if的语句，选择是否展示-->
+  let templateStr=`
+       {{#isShow}}
+      <h1>hello world</h1>
+      {{/isShow}}
+    `
+  let data={
+    isShow:true
+  }
+
+  const html=Mustache.render(templateStr, data);
+  document.getElementById("container").innerHTML=html
+</script>
+</html>

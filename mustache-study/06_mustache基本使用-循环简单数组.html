@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../jslib/mustache.js"></script>
+</head>
+<body>
+<div id="container"></div>
+</body>
+<script>
+<!-- 要是使用循环遍历，没有其他的数据的时候，直接使用.即可完成遍历-->
+  let templateStr=`
+   <h3>学生的姓名：</h3>
+   {{#arr}}
+   <ul>
+   <li>
+        {{.}}
+    </li>
+</ul>
+{{/arr}}
+    `
+  let data={
+    arr:['张三','李四','王五']
+  }
+
+  const html=Mustache.render(templateStr, data);
+  document.getElementById("container").innerHTML=html
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jslib/mustache.js"></script>
+</head>
+<body>
+<!--要学习mustache的实现原理，当然要先学会他是如何使用的咯-->
+<div id="container"></div>
+</body>
+<script>
+    let templateStr=`
+    <ul>
+            {{#arr}}
+                <li>
+                    <div class="hd">{{name}}的基本信息</div>
+                    <div class="bd">
+                        <p>姓名：{{name}}</p>
+                        <p>性别：{{sex}}</p>
+                        <p>年龄：{{age}}</p>
+                    </div>
+                </li>
+            {{/arr}}
+        </ul>
+    `
+    //注意#arr是开始的地方，/arr是结束的地方，都需要使用{{}}括号进行说明
+    let data={
+        arr: [
+            { "name": "小明", "age": 12, "sex": "男" },
+            { "name": "小红", "age": 11, "sex": "女" },
+            { "name": "小强", "age": 13, "sex": "男" }
+        ]
+    }
+    //此时mustache已经把代码都整合好了，只需要放在页面上就可以了
+    const html=Mustache.render(templateStr, data);
+    document.getElementById("container").innerHTML=html
+
+    /*
+    * 最后看到有大佬想出一种其他的方法
+    * 在script标签中所写的元素呢，只要不是js的话，他是不会管理的
+    * 所以可以随便放一个js的标签，加上id，把相关的值放上去，也可以完成后续的操作
+    * */
+
+</script>
+</html>

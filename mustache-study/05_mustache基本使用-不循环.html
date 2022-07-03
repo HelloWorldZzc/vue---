@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jslib/mustache.js"></script>
+</head>
+<body>
+<div id="container"></div>
+</body>
+<script>
+    //如果没有使用循环遍历的话，就不需要加上#/ 看起来特别像vue的模板语法
+    let templateStr=`
+    <h3> hello，world：{{name}},age:{{age}}</h3>
+    `
+    let data={
+      name:"张三", age:20
+    }
+    //此时mustache已经把代码都整合好了，只需要放在页面上就可以了
+    const html=Mustache.render(templateStr, data);
+    document.getElementById("container").innerHTML=html
+</script>
+</html>

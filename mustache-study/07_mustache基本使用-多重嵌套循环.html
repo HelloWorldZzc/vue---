@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../jslib/mustache.js"></script>
+</head>
+<body>
+<div id="container"></div>
+</body>
+<script>
+<!-- 有点类似于vue中v-for的多重遍历-->
+  let templateStr=`
+   <h3>学生相关的信息如下</h3>
+   {{#arr}}
+    <ul>
+    <li>
+        姓名：{{name}}
+        年龄：{{age}}
+        爱好：
+        {{#hobbies}}
+        <ul>
+        <li>
+        {{.}}
+        </li>
+        </ul>
+        {{/hobbies}}
+    </li>
+    </ul>
+   {{/arr}}
+    `
+  let data={
+    arr: [
+      {'name': '小明', 'age': 12, 'hobbies': ['游泳', '羽毛球']},
+      {'name': '小红', 'age': 11, 'hobbies': ['编程', '写作文', '看报纸']},
+      {'name': '小强', 'age': 13, 'hobbies': ['打台球']},
+    ]
+  }
+
+  const html=Mustache.render(templateStr, data);
+  document.getElementById("container").innerHTML=html
+</script>
+</html>
