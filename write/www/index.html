@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/xuni/bundle.js"></script>
+</head>
+<body>
+<div id="container"></div>
+</body>
+<script>
+
+  let html=`<ul>
+                {{#arr}}
+                    <li>
+                        {{name}}的爱好是：
+                        <ol>
+                            {{#hobbies}}
+                                <li>{{.}}</li>
+                            {{/hobbies}}
+                        </ol>
+                    </li>
+                {{/arr}}
+            </ul>`
+  const data={
+      arr: [
+          {'name': '小明',  'hobbies': ['游泳', '羽毛球']},
+          {'name': '小红',  'hobbies': ['编程', '写作文', '看报纸']},
+          {'name': '小强',  'hobbies': ['打台球']},
+      ]
+  }
+  const test=window.my_TemplateEngine.render(html,data);
+  document.getElementById("container").innerHTML=test
+
+</script>
+</html>
