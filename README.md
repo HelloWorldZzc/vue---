@@ -12,8 +12,10 @@ ps:这.md文件写的可能有点拉胯（自信点把可能去掉哈哈哈，�
  在学习mustache模板引擎的底层原理，我们首先要学习如何使用mustache模板引擎的用法
  jslib文件夹中存放在mustache的源文件，mustache-study是应用mustache做的一些应用操作
 # write文件夹
- 模块化编程，手写mustache的过程全部放置于此文件夹 
+ 模块化编程，手写mustache的过程全部放置于此文件夹
+ 
  想要体会原汁原味的开发过程的话，可以先使用npm i安装相关的包，使用webpack-dev-server（或npm run dev）进行项目的启动。在浏览器端口出入8080即可访问（可通过webpack.config.js）文件件进行重新配置 
+ 
  PS：要是对webpack不了解的话，可以参考webpack-study文件夹，上面记录着自己学习webpack的笔记and代码 
 # dist文件夹
     里面是通过webpack整合好的文件，可直接在HTML页面中使用script标签引入，和mustache的使用方式类似，但是没有他的功能这么强大罢了。只能做到循环迭代和相关的操作，v-if的操作还没有能够实现。还是路漫漫其修远兮呀
