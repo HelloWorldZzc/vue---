@@ -10,3 +10,6 @@
 # jslib文件夹和mustache-study？
 在学习mustache模板引擎的底层原理，我们首先要学习如何使用mustache模板引擎的用法
 jslib文件夹中存放在mustache的源文件，mustache-study是应用mustache做的一些应用操作
+# write文件夹
+模块化编程，手写mustache的过程全部放置于此文件夹
+想要体会原汁原味的开发过程的话，可以先使用npm i安装相关的包，使用webpack-dev-server（或npm run dev）进行项目的启动。在浏览器端口出入8080即可访问（可通过webpack.config.js）文件件进行重新配置
